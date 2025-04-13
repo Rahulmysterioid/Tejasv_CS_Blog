@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Admin Panel</h1>
+  </header>
+  <div class="container">
+    <input type="text" id="titleInput" placeholder="Enter blog title">
+    <div id="editor" style="height: 300px;"></div>
+    <button onclick="addPost()">Post Blog</button>
+  </div>
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script>
+    var quill = new Quill('#editor', {
+      theme: 'snow',
+      modules: {
+        toolbar: [
+          [{ header: [1, 2, 3, false] }],
+          ['bold', 'italic', 'underline'],
+          [{ color: [] }, { background: [] }],
+          ['image', 'code-block']
+        ]
+      }
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

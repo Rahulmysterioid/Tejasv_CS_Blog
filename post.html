@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog Post</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Blog Post</h1>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+  <div class="container" id="postContent"></div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const index = params.get('id');
+    const posts = JSON.parse(localStorage.getItem('posts')) || [];
+    const post = posts[index];
+
+    if (post) {
+      document.getElementById('postContent').innerHTML = `
+        <h2>${post.title}</h2>
+        <p class="date">${post.date}</p>
+        <div>${post.content}</div>
+      `;
+    } else {
+      document.getElementById('postContent').innerHTML = "<p>Post not found.</p>";
+    }
+  </script>
+</body>
+</html>
