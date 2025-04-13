@@ -9,10 +9,14 @@ header {
   padding: 1em;
   text-align: center;
 }
+nav {
+  margin-top: 10px;
+}
 nav a {
-  margin: 0 15px;
+  margin: 0 10px;
   color: white;
   text-decoration: none;
+  display: inline-block;
 }
 .container {
   max-width: 800px;
@@ -24,6 +28,7 @@ input[type="text"] {
   width: 100%;
   padding: 10px;
   margin: 20px 0;
+  box-sizing: border-box;
 }
 button {
   padding: 10px 20px;
@@ -45,4 +50,16 @@ button {
 .date {
   font-size: 0.9em;
   color: gray;
+}
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+  nav a {
+    display: block;
+    margin: 5px 0;
+  }
+  .container {
+    padding: 10px;
+  }
 }
