@@ -62,4 +62,28 @@ button {
   .container {
     padding: 10px;
   }
+  @media (max-width: 768px) {
+    body {
+      padding: 10px;
+      font-size: 16px;
+    }
+  
+    .blog-post {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .blog-interactions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    .like-btn, .comment-btn {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+  }
+  
 }
