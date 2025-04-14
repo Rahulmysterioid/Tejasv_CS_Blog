@@ -29,3 +29,14 @@ function addPost() {
   quill.setContents([]);
 }
 renderPosts();
+
+// Like button click handler
+document.querySelectorAll(".like-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    let count = parseInt(button.innerText.match(/\d+/)) || 0;
+    count += 1;
+    button.innerText = `👍 Like (${count})`;
+  });
+});
+
+
